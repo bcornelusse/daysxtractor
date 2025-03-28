@@ -2,3 +2,4 @@ pyomo
 xlrd
 xlwt
 python-dateutil
+matplotlib

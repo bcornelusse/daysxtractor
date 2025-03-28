@@ -16,13 +16,13 @@ import dateutil
 # @return Data with the time series.
 def parseFile(filePath, with_units=False):
     # Open excel
-    tic = time.clock()
+    tic = time.time()
 
     with open(filePath, newline='') as file:
         data = parseData(file, with_units)
 
     # Print what has been read
-    toc = time.clock()
+    toc = time.time()
     print("Data for %s days read in %.2f seconds.\nLabels:" % (len(data.days()), toc-tic))
     for l in data.labels:
         print("\t%s: min=%.2f, average=%.2f, max=%.2f" % (l.name, l.min, l.average, l.max))
